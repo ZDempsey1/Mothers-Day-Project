@@ -26,7 +26,7 @@ export const authOptions: AuthOptions = {
         },
         password: {
           label: 'Password',
-          type: 'passord'
+          type: 'password'
         }
       },
       async authorize(credentials) {
@@ -65,4 +65,3 @@ export const authOptions: AuthOptions = {
 };
 
 export default NextAuth(authOptions);
-

@@ -42,7 +42,7 @@ const UserCard: React.FC<UserCardProps> = ({ name }) => {
           <img draggable={false} className="w-max h-max object-contain" src={imgSrc} alt="" />
         </div>
       <div className="mt-4 text-gray-400 text-2xl text-center group-hover:text-white">{name}</div>
-   </div>
+    </div>
   );
 }
 
