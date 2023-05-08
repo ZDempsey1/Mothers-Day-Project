@@ -3,12 +3,12 @@ import { useRouter } from 'next/router';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { PlayIcon } from '@heroicons/react/24/solid';
 
-import { MovieInterface } from '@/types';
+import { FlowerInterface } from '@/types';
 import FavoriteButton from '@/components/FavoriteButton';
 import useInfoModalStore from '@/hooks/useInfoModalStore';
 
 interface MovieCardProps {
-  data: MovieInterface;
+  data: FlowerInterface;
 }
 
 const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
@@ -19,7 +19,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
 
   return (
     <div className="group bg-zinc-900 col-span relative h-[12vw]">
-      <img onClick={redirectToWatch} src={data.thumbnailUrl} alt="Movie" draggable={false} className="
+      <img onClick={redirectToWatch} src={data.pic1} alt="Movie" draggable={false} className="
         cursor-pointer
         object-cover
         transition
@@ -49,7 +49,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
         group-hover:translate-x-[2vw]
         group-hover:opacity-100
       ">
-        <img onClick={redirectToWatch} src={data.thumbnailUrl} alt="Movie" draggable={false} className="
+        <img onClick={redirectToWatch} src={data.pic2} alt="Movie" draggable={false} className="
           cursor-pointer
           object-cover
           transition

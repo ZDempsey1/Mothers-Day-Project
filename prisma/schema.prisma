@@ -23,6 +23,7 @@ model User {
   sessions Session[]
   accounts Account[]
   favoriteIds String[] @db.ObjectId
+  profileImage String?
 }
 
 model Account {
@@ -94,5 +95,5 @@ model Flower {
   pic1 String?
   pic2 String?
   pic3 String?
-  picThumbnail String? 
+  picThumbnail String?
 }
