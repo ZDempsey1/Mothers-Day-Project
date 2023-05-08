@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         throw new Error('Missing Id');
         }
         const prisma = new PrismaClient();
-        const flower = await prisma.flower.findUnique({
+        const flowers = await prisma.flower.findUnique({
             where: {
                 id: flowerId,
             },

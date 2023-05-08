@@ -62,7 +62,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
                 {data?.duration}
               </p>
               <p className="text-white text-lg">
-                {data?.genre}
+                {data?.light}
               </p>
             </div>
             <p className="text-white text-lg">

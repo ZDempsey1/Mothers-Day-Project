@@ -11,7 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         await serverAuth(req, res);
 
         const prisma = new PrismaClient();
-        const flowers = await prisma.flower.findUnique();
+        const flowers = await prisma.flower.findMany();
 
         return res.status(200).json(flowers);
     } catch (error) {

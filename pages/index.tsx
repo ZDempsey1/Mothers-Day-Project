@@ -28,7 +28,7 @@ export async function getServerSideProps(context: NextPageContext) {
 }
 
 const Home = () => {
-  const { data: movies = [] } = useMovieList();
+  const { data: plants = [] } = useMovieList();
   const { data: favorites = [] } = useFavorites();
   const {isOpen, closeModal} = useInfoModalStore();
 
@@ -38,8 +38,8 @@ const Home = () => {
       <Navbar />
       <Billboard />
       <div className="pb-40">
-        <MovieList title="Trending Now" data={movies} />
-        <MovieList title="My List" data={favorites} />
+        <MovieList title="Trending Now" data={plants} />
+        <MovieList title="My Favorites" data={favorites} />
       </div>
     </>
   )
