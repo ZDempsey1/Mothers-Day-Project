@@ -9,48 +9,48 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (req.method === 'POST') {
       const { currentUser } = await serverAuth(req, res);
 
-      const { movieId } = req.body;
-  
-      const existingMovie = await prismadb.movie.findUnique({
+      const { flowerId } = req.body;
+
+      const existingFlower = await prismadb.flower.findUnique({
         where: {
-          id: movieId,
+          id: flowerId,
         }
       });
-  
-      if (!existingMovie) {
+
+      if (!existingFlower) {
         throw new Error('Invalid ID');
       }
-  
+
       const user = await prismadb.user.update({
         where: {
           email: currentUser.email || '',
         },
         data: {
           favoriteIds: {
-            push: movieId
+            push: flowerId
           }
         }
       });
-  
+
       return res.status(200).json(user);
     }
 
     if (req.method === 'DELETE') {
       const { currentUser } = await serverAuth(req, res);
 
-      const { movieId } = req.body;
+      const { flowerId } = req.body;
 
-      const existingMovie = await prismadb.movie.findUnique({
+      const existingFlower = await prismadb.flower.findUnique({
         where: {
-          id: movieId,
+          id: flowerId,
         }
       });
 
-      if (!existingMovie) {
+      if (!existingFlower) {
         throw new Error('Invalid ID');
       }
 
-      const updatedFavoriteIds = without(currentUser.favoriteIds, movieId);
+      const updatedFavoriteIds = without(currentUser.favoriteIds, flowerId);
 
       const updatedUser = await prismadb.user.update({
         where: {
@@ -63,7 +63,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       return res.status(200).json(updatedUser);
     }
-    
+
     return res.status(405).end();
   } catch (error) {
     console.log(error);
