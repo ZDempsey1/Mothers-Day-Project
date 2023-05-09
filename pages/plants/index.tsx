@@ -2,34 +2,46 @@ import React, { useState } from 'react';
 import FlowerList from '@/components/FlowerList';
 import useFlowerList from '@/hooks/useFlowerList';
 import Navbar from '@/components/Navbar';
+import { Flower } from '@/types/Flower';
 
 const PlantsIndex = () => {
   const { data: flowers = [] } = useFlowerList();
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearchChange = (event) => {
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
 
-  const filteredFlowers = flowers.filter((flower) =>
-    flower.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredFlowers = flowers.filter((flower: Flower) => {
+    const name = flower.name ? flower.name.toLowerCase() : '';
+    const bName = flower.bName ? flower.bName.toLowerCase() : '';
+    const family = flower.family ? flower.family.toLowerCase() : '';
+    const plantType = flower.plantType ? flower.plantType.toLowerCase() : '';
+
+    return name.includes(searchTerm.toLowerCase()) ||
+          bName.includes(searchTerm.toLowerCase()) ||
+          family.includes(searchTerm.toLowerCase()) ||
+          plantType.includes(searchTerm.toLowerCase());
+  });
+
 
   return (
     <div className="flex flex-col pb-40">
       <Navbar />
-      <div className="mt-8">
+      <div className="mt-20">
         <FlowerList
-          name="Trending Now"
+          name="Entire Plant List- More added daily!"
           data={filteredFlowers}
           renderHeader={() => (
             <input
-              type="text"
-              placeholder="Search for plants..."
-              value={searchTerm}
-              onChange={handleSearchChange}
-              className="your-input-class"
-            />
+  type="text"
+  placeholder="Search for plants by common/botanical name, plant type, or plant family."
+  value={searchTerm}
+  onChange={handleSearchChange}
+  className="your-input-class"
+  style={{ height: '40px', width: "660px", padding: '8px' }}
+/>
+
           )}
         />
       </div>
