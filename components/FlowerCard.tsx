@@ -1,17 +1,16 @@
 import React, { useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
-import { PlayIcon } from '@heroicons/react/24/solid';
 
 import { FlowerInterface } from '@/types';
 import FavoriteButton from '@/components/FavoriteButton';
 import useInfoModalStore from '@/hooks/useInfoModalStore';
 
-interface MovieCardProps {
+interface FlowerCardProps {
   data: FlowerInterface;
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
+const FlowerCard: React.FC<FlowerCardProps> = ({ data }) => {
   const router = useRouter();
   const { openModal } = useInfoModalStore();
 
@@ -88,4 +87,4 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
   )
 }
 
-export default MovieCard;
+export default FlowerCard;

@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     await serverAuth(req, res);
 
-    const plantCount = await prismadb.movie.count();
+    const plantCount = await prismadb.flower.count();
     const randomIndex = Math.floor(Math.random() * plantCount);
 
     const randomPlant = await prismadb.flower.findMany({

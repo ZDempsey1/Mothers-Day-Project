@@ -1,7 +1,7 @@
 import useSwr from 'swr'
 import fetcher from '@/libs/fetcher';
 
-const useMovies = () => {
+const useFlowers = () => {
   const { data, error, isLoading } = useSwr('/api/flowers', fetcher, {
     revalidateIfStale: false,
     revalidateOnFocus: false,
@@ -14,4 +14,4 @@ const useMovies = () => {
   }
 };
 
-export default useMovies;
+export default useFlowers;
