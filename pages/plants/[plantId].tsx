@@ -1,4 +1,4 @@
-// pages/flowers/[flowerId].tsx
+// pages/plants/[plantId].tsx
 
 import { useRouter } from 'next/router';
 import { GetServerSideProps } from 'next';
@@ -12,7 +12,12 @@ const FlowerDetails = ({ flower }) => {
   }
 
   // Display flower details using the flower prop
-  // ...
+  return (
+    <div>
+      <h1>{flower.name}</h1>
+      {/* Add more styling and content here */}
+    </div>
+  );
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -40,9 +45,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       notFound: true,
     };
   }
-  return (
-    <div>hello</div>
-  )
 };
 
 export default FlowerDetails;

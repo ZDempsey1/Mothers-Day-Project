@@ -80,24 +80,14 @@ export async function getServerSideProps(context: NextPageContext) {
 const Home = () => {
   const { data: flowers = [] } = useFlowerList();
   const { data: favorites = [] } = useFavorites();
-  const [selectedFlowerId, setSelectedFlowerId] = useState(null);
-  const {isOpen, closeModal} = useInfoModalStore();
-  
-  const handleFlowerClick = (flowerId) => {
-    setSelectedFlowerId(flowerId);
-  };
 
   return (
     <>
-      <Link href={`/plants/${"plantId"}`}>
-        <button className="your-button-class">View Details</button>
-      </Link>
-      <InfoModal visible={isOpen} onClose={closeModal} />
       <Navbar />
       <Billboard />
       <div className="pb-40">
-        <FlowerList name="Trending Now" data={flowers} onClick={handleFlowerClick} />
-        <FlowerList name="My Favorites" data={favorites} onClick={handleFlowerClick} />
+        <FlowerList name="Trending Now" data={flowers} />
+        <FlowerList name="My Favorites" data={favorites} />
       </div>
     </>
   )
