@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FlowerList from '@/components/FlowerList';
 import useFlowerList from '@/hooks/useFlowerList';
 import Navbar from '@/components/Navbar';
-import { Flower } from '@/types/Flower';
+import { FlowerInterface } from '@/types/index';
 
 const PlantsIndex = () => {
   const { data: flowers = [] } = useFlowerList();
@@ -12,7 +12,7 @@ const PlantsIndex = () => {
     setSearchTerm(event.target.value);
   };
 
-  const filteredFlowers = flowers.filter((flower: Flower) => {
+  const filteredFlowers = flowers.filter((flower: FlowerInterface) => {
     const name = flower.name ? flower.name.toLowerCase() : '';
     const bName = flower.bName ? flower.bName.toLowerCase() : '';
     const family = flower.family ? flower.family.toLowerCase() : '';
