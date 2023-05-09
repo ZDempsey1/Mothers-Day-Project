@@ -40,7 +40,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
           } transform duration-300 relative flex-auto bg-zinc-900 drop-shadow-md`}
         >
           <div className="relative h-96">
-            <img src={data?.pic2} className="w-full object-cover h-full" />
+            <img src={data?.pic2} alt="" className="w-full object-cover h-full" />
             <div
               onClick={handleClose}
               className="cursor-pointer absolute top-3 right-3 h-10 w-10 rounded-full bg-black bg-opacity-70 flex items-center justify-center"

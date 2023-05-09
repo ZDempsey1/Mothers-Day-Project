@@ -16,7 +16,7 @@ const Billboard: React.FC = () => {
 
   return (
     <div className="relative h-[56.25vw]">
-      <img src={data?.pic1} className="w-full h-[56.25vw] object-cover brightness-[60%] transition duration-500" />
+      <img src={data?.pic1} alt="" className="w-full h-[56.25vw] object-cover brightness-[60%] transition duration-500" />
       <div className="absolute top-[30%] md:top-[40%] ml-4 md:ml-16">
         <p className="text-white text-1xl md:text-5xl h-full w-[50%] lg:text-6xl font-bold drop-shadow-xl">
           {data?.name}
