@@ -45,23 +45,24 @@ const Navbar = () => {
   return (
     <nav className="w-full fixed z-10 mb-4">
 
-      <div className={`px-4 md:px-16 py-6 flex flex-row items-center transition duration-500 ${showBackground ? 'bg-zinc-900 bg-opacity-40' : ''} mb-10`}>
+      <div className={`px-4 md:px-16 py-6 flex flex-row items-center transition duration-500 ${showBackground ? 'bg-zinc-900 bg-opacity-70 text-white' : ''} mb-10`}>
         <img src="/images/planting.png" className="h-4 lg:h-7" alt="Logo" />
         <div className="flex-row ml-8 gap-7 hidden lg:flex">
         <Link href="/">
-          <NavbarItem label="Home" route={router.pathname} expectedRoute="/" />
+          <NavbarItem label="Home" route={router.pathname} expectedRoute="/" showBackground={showBackground} />
         </Link>
         <Link href="/plants">
-        <NavbarItem label="Plants" route={router.pathname} expectedRoute="/plants" />
+          <NavbarItem label="Plants" route={router.pathname} expectedRoute="/plants" showBackground={showBackground} />
         </Link>
         <Link href="/favorites">
-        <NavbarItem label="Favorites" route={router.pathname} expectedRoute="/favorites" />
+          <NavbarItem label="Favorites" route={router.pathname} expectedRoute="/favorites" showBackground={showBackground} />
         </Link>
         <Link href="/calendar">
-        <NavbarItem label="Calendar" route={router.pathname} expectedRoute="/calendar" />
+          <NavbarItem label="Calendar" route={router.pathname} expectedRoute="/calendar" showBackground={showBackground} />
         </Link>
+
         {router.pathname.startsWith('/plants/') && (
-          <div className="text-black font-bold text-lg">
+          <div className=" font-bold text-lg">
             Flower Details
           </div>
         )}
