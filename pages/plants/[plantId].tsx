@@ -58,7 +58,7 @@ const FlowerDetails: React.FC<FlowerDetailsProps> = ({ flower }) => {
           <span className="font-bold">Typical Flower Color-</span> {flower.flowerColor}
         </p>
           <p className="mt-4 text-xl">
-          <span className="font-bold">Bloom Period-</span> {flower.nativeArea}
+          <span className="font-bold">Native Locations-</span> {flower.nativeArea}
         </p>
           <p className="mt-4 text-xl">
           <span className="font-bold">Toxicity-</span> {flower.toxic}

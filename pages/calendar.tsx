@@ -3,17 +3,16 @@ import useFavorites from '@/hooks/useFavorites';
 import React from 'react';
 import FlowerList from '@/components/FlowerList';
 
-const FavoritesIndex = () => {
-    const { data: favorites = [] } = useFavorites();
+const Calendar = () => {
 
     return (
         <div className="flex flex-col">
         <Navbar />
-        <div className="mt-20">
-            <FlowerList name="Favorite Plants" data={favorites} />
+        <div className="mt-20 text-3xl text-center">
+        <h1 className='mt-20'>GOOGLE CALENDAR INTEGRATION COMING SOON!!!</h1>
         </div>
         </div>
     );
 };
 
-export default FavoritesIndex;
+export default Calendar;

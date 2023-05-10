@@ -9,7 +9,7 @@ const NavbarItem: React.FC<NavbarItemProps> = ({ label, route, expectedRoute }) 
   const textColor = route === '/' ? 'text-white' : 'text-black';
 
   return (
-    <div className={`${active ? 'cursor-default' : 'hover:text-gray-300 cursor-pointer'} ${textColor} transition`}>
+    <div className={`${active ? 'cursor-default font-bold text-lg' : 'hover:text-gray-300 cursor-pointer'} ${textColor} transition`}>
       {label}
     </div>
   )

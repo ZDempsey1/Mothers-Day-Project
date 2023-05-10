@@ -57,6 +57,14 @@ const Navbar = () => {
         <Link href="/favorites">
         <NavbarItem label="Favorites" route={router.pathname} expectedRoute="/favorites" />
         </Link>
+        <Link href="/calendar">
+        <NavbarItem label="Calendar" route={router.pathname} expectedRoute="/calendar" />
+        </Link>
+        {router.pathname.startsWith('/plants/') && (
+          <div className="text-black font-bold text-lg">
+            Flower Details
+          </div>
+        )}
         {/* ...other NavbarItem components */}
       </div>
 
