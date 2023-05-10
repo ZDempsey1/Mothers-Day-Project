@@ -11,9 +11,9 @@ interface FlowerDetailsProps {
 const FlowerDetails: React.FC<FlowerDetailsProps> = ({ flower }) => {
   const router = useRouter();
 
-  if (router.isFallback) {
-    return <div>Loading...</div>;
-  }
+  // if (router.isFallback) {
+  //   return <div>Loading...</div>;
+  // }
 
   const [selectedImage, setSelectedImage] = useState(flower.pic1);
 
