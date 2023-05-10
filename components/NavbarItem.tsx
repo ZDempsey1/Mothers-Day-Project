@@ -1,13 +1,15 @@
-import React from 'react';
-
 interface NavbarItemProps {
   label: string;
-  active?: boolean;
+  route: string;
+  expectedRoute: string;
 }
 
-const NavbarItem: React.FC<NavbarItemProps> = ({ label, active }) => {
+const NavbarItem: React.FC<NavbarItemProps> = ({ label, route, expectedRoute }) => {
+  const active = route === expectedRoute;
+  const textColor = route === '/' ? 'text-white' : 'text-black';
+
   return (
-    <div className={active ? 'text-white cursor-default' : 'text-gray-200 hover:text-gray-300 cursor-pointer transition'}>
+    <div className={`${active ? 'cursor-default' : 'hover:text-gray-300 cursor-pointer'} ${textColor} transition`}>
       {label}
     </div>
   )

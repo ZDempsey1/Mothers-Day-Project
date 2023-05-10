@@ -4,6 +4,8 @@
 
 body {
   @apply h-full overflow-x-hidden;
+  background-color: #edf2f7;
+
 }
 
 #__next {

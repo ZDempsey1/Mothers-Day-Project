@@ -41,7 +41,6 @@ const PlantsIndex = () => {
   className="your-input-class"
   style={{ height: '40px', width: "660px", padding: '8px' }}
 />
-
           )}
         />
       </div>

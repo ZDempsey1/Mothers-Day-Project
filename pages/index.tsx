@@ -85,7 +85,7 @@ const Home = () => {
     <>
       <Navbar />
       <Billboard />
-      <div className="pb-40">
+      <div>
         <FlowerList name="Trending Now" data={flowers} />
         <FlowerList name="My Favorites" data={favorites} />
       </div>
