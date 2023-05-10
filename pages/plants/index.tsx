@@ -26,7 +26,7 @@ const PlantsIndex = () => {
 
 
   return (
-    <div className="flex flex-col pb-40">
+    <div className="flex flex-col">
       <Navbar />
       <div className="mt-20">
         <FlowerList
