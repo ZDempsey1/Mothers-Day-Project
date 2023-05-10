@@ -116,8 +116,9 @@ const FlowerDetails: React.FC<FlowerDetailsProps> = ({ flower }) => {
     <div className="flex flex-col bg-grey">
       <Navbar />
       <div className="p-4 bg-white shadow-md rounded-md mt-20 flex">
-        <div className="flex-1 flex justify-end">
-          <div className='w-3/4 '>
+        <div className="flex-1 mt-2">
+          <div className='mr-12 ml-12' style={{ marginRight: '58px' }}>
+
           <h2 className="text-2xl font-bold">Common Name- {flower.name}</h2>
           <p className="mt-4 text-xl">
           <span className="font-bold">Plant Family-</span> {flower.family}
@@ -150,28 +151,26 @@ const FlowerDetails: React.FC<FlowerDetailsProps> = ({ flower }) => {
           <span className="font-bold">Bloom Period-</span> {flower.nativeArea}
         </p>
           <p className="mt-4 text-xl">
-          <span className="font-bold">Toxicity?-</span> {flower.toxic}
+          <span className="font-bold">Toxicity-</span> {flower.toxic}
         </p>
           <p className="mt-4 text-xl">
-          <span className="font-bold">Bloom Period-</span> {flower.toxicD}
+          <span className="font-bold">Toxic Information-</span> {flower.toxicD}
         </p>
           <p className="mt-4 text-xl">
           <span className="font-bold">Light Requirements-</span> {flower.lightD}
         </p>
           <p className="mt-4 text-xl">
-          <span className="font-bold">Soil-</span> {flower.soilD}
+          <span className="font-bold">Soil Needs-</span> {flower.soilD}
         </p>
           <p className="mt-4 text-xl">
-          <span className="font-bold">Watering-</span> {flower.waterD}
+          <span className="font-bold">Watering Needs-</span> {flower.waterD}
         </p>
           <p className="mt-4 text-xl">
           <span className="font-bold">Temperature and Humidity-</span> {flower.temp}
         </p>
-          <p className="mt-4 text-xl">
-          <span className="font-bold">Fertilizer-</span> {flower.fertilizer}
-        </p>
-        <p className="mt-2 text-xl">
-          <span className="font-bold">{flower.name} Care- </span>{flower.care}</p>
+
+        {/* <p className="mt-2 text-xl">
+          <span className="font-bold">{flower.name} Care- </span>{flower.care}</p> */}
           </div>
         </div>
         <div className="flex-1">
@@ -200,6 +199,11 @@ const FlowerDetails: React.FC<FlowerDetailsProps> = ({ flower }) => {
               onClick={() => handleImageClick(flower.pic3.toString())}
             />
           </div>
+          <p className="mt-10 text-xl mr-10">
+          <span className="font-bold">{flower.name}</span><span> Care- </span>{flower.care}</p>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Fertilizer-</span> {flower.fertilizer}
+        </p>
         </div>
       </div>
     </div>
