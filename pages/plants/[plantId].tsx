@@ -115,39 +115,97 @@ const FlowerDetails: React.FC<FlowerDetailsProps> = ({ flower }) => {
   return (
     <div className="flex flex-col bg-grey">
       <Navbar />
-      <div className="p-4 bg-white shadow-md rounded-md mt-20">
-        <h2 className="text-2xl font-bold">Common Name- {flower.name}</h2>
-        <p className="mt-4 text-gray-500">Plant Family- {flower.family}</p>
-        <p className="mt-2">Caring- {flower.care}</p>
-        <img
-          src={selectedImage.toString()}
-          alt="Selected"
-          className="w-48 h-48 object-cover rounded-md mt-4"
-        />
-        <div className="flex mt-4">
+      <div className="p-4 bg-white shadow-md rounded-md mt-20 flex">
+        <div className="flex-1 flex justify-end">
+          <div className='w-3/4 '>
+          <h2 className="text-2xl font-bold">Common Name- {flower.name}</h2>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Plant Family-</span> {flower.family}
+        </p>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Botanical Name-</span> {flower.bName}
+        </p>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Type of Plant-</span> {flower.plantType}
+        </p>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Size Range-</span> {flower.size}
+        </p>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Sunlight Requirements-</span> {flower.sun}
+        </p>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Type of Soil-</span> {flower.soilType}
+        </p>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Soil PH-</span> {flower.soilPh}
+        </p>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Bloom Period-</span> {flower.bloom}
+        </p>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Typical Flower Color-</span> {flower.flowerColor}
+        </p>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Bloom Period-</span> {flower.nativeArea}
+        </p>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Toxicity?-</span> {flower.toxic}
+        </p>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Bloom Period-</span> {flower.toxicD}
+        </p>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Light Requirements-</span> {flower.lightD}
+        </p>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Soil-</span> {flower.soilD}
+        </p>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Watering-</span> {flower.waterD}
+        </p>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Temperature and Humidity-</span> {flower.temp}
+        </p>
+          <p className="mt-4 text-xl">
+          <span className="font-bold">Fertilizer-</span> {flower.fertilizer}
+        </p>
+        <p className="mt-2 text-xl">
+          <span className="font-bold">{flower.name} Care- </span>{flower.care}</p>
+          </div>
+        </div>
+        <div className="flex-1">
           <img
-            src={flower.pic1.toString()}
-            alt=""
-            className="w-24 h-24 object-cover rounded-md mr-4 cursor-pointer"
-            onClick={() => handleImageClick(flower.pic1.toString())}
+            src={selectedImage.toString()}
+            alt="Selected"
+            className="w-3/4 object-cover rounded-md mt-4"
           />
-          <img
-            src={flower.pic2.toString()}
-            alt=""
-            className="w-24 h-24 object-cover rounded-md mr-4 cursor-pointer"
-            onClick={() => handleImageClick(flower.pic2.toString())}
-          />
-          <img
-            src={flower.pic3.toString()}
-            alt=""
-            className="w-24 h-24 object-cover rounded-md cursor-pointer"
-            onClick={() => handleImageClick(flower.pic3.toString())}
-          />
+          <div className="flex mt-4">
+            <img
+              src={flower.pic1.toString()}
+              alt=""
+              className="w-24 h-24 object-cover rounded-md mr-4 cursor-pointer"
+              onClick={() => handleImageClick(flower.pic1.toString())}
+            />
+            <img
+              src={flower.pic2.toString()}
+              alt=""
+              className="w-24 h-24 object-cover rounded-md mr-4 cursor-pointer"
+              onClick={() => handleImageClick(flower.pic2.toString())}
+            />
+            <img
+              src={flower.pic3.toString()}
+              alt=""
+              className="w-24 h-24 object-cover rounded-md cursor-pointer"
+              onClick={() => handleImageClick(flower.pic3.toString())}
+            />
+          </div>
         </div>
       </div>
     </div>
   );
-};
+
+}
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const flowerId = context.params?.plantId;

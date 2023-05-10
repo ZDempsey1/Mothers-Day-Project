@@ -96,4 +96,5 @@ model Flower {
   pic2 String?
   pic3 String?
   picThumbnail String?
+  fertilizer String?
 }

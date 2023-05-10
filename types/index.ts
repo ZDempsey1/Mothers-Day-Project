@@ -31,5 +31,6 @@ export interface FlowerInterface {
   pic1: String;
   pic2: String;
   pic3: String;
-  picThumbnail: String
+  picThumbnail: String;
+  fertilizer: String
 }
