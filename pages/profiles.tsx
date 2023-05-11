@@ -8,8 +8,13 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 const images = [
   '/images/flower icon.png',
   '/images/flowersicon.png',
+  '/images/flower-pot.png',
   '/images/planting icon.png',
+  '/images/cactus.png',
+  '/images/watering-plants.png',
+  '/images/potting.png',
   '/images/sunflower icon.png'
+
 ]
 
 interface UserCardProps {
@@ -97,7 +102,7 @@ const App = () => {
   return (
     <div className="flex items-center h-full justify-center">
       <div className="flex flex-col">
-        <h1 className="text-3xl md:text-6xl text-black text-center">Who&#39;s watching?</h1>
+        <h1 className="text-3xl md:text-6xl text-black text-center">Who&#39;s Planting?</h1>
         <div className="flex items-center justify-center gap-8 mt-10">
         <div onClick={() => selectProfile()}>
           <UserCard
@@ -107,6 +112,8 @@ const App = () => {
             />
           </div>
         </div>
+        <h1 className="text-center text-2xl mt-10">Select an icon below and click your name to proceed</h1>
+        <h1 className="text-center text-2xl mt-5">You can update your icon later if you can't decide from all the awesomeness!</h1>
         <div className="mt-8">{renderImageOptions()}</div>
       </div>
     </div>
