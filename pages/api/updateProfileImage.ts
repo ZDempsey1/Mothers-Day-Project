@@ -1,32 +1,26 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { getSession } from 'next-auth/react';
-import { PrismaClient } from '@prisma/client';
+import { NextApiRequest, NextApiResponse } from 'next';
+import prisma from '@/libs/prismadb';
 
-const prisma = new PrismaClient();
-
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
-        const session = await getSession({ req });
+        const { userId, imageUrl } = req.body;
 
-        if (!session) {
-            return res.status(401).json({ message: 'Not authenticated' });
+        if (!userId || !imageUrl) {
+        res.status(400).json({ error: 'User ID and image URL are required.' });
+        return;
         }
 
-        const { email, selectedImage } = req.body;
-
-        if (!email || !selectedImage) {
-            return res.status(400).json({ message: 'Invalid request data' });
-        }
-
-        await prisma.user.update({
-            where: { email },
-            data: { profileImage: selectedImage },
+        try {
+        const updatedUser = await prisma.user.update({
+            where: { id: userId },
+            data: { profileImage: imageUrl },
         });
 
-        res.status(200).json({ message: 'Profile image updated' });
+        res.status(200).json({ user: updatedUser });
+        } catch (error) {
+        res.status(500).json({ error: 'Failed to update profile image.' });
+        }
     } else {
-        res.status(405).json({ message: 'Method not allowed' });
+        res.status(405).json({ error: 'Method not allowed.' });
     }
-};
-
-export default handler;
+}

@@ -47,7 +47,7 @@ const AccountMenu: React.FC<AccountMenuProps> = ({ visible }) => {
     return null;
   }
 
-  const profileImage = currentUser?.profileImage || '/images/default-blue.png';
+  const profileImage = currentUser?.profileImage;
 
   return (
     <div className="bg-black w-56 absolute top-14 right-0 py-5 flex-col border-2 border-gray-800 flex">
