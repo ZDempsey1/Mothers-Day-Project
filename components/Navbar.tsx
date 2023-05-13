@@ -60,6 +60,9 @@ const Navbar = () => {
         <Link href="/calendar">
           <NavbarItem label="Calendar" route={router.pathname} expectedRoute="/calendar" showBackground={showBackground} />
         </Link>
+        <Link href="/profiles">
+          <NavbarItem label="profile" route={router.pathname} expectedRoute="/profiles" showBackground={showBackground} />
+        </Link>
 
         {router.pathname.startsWith('/plants/') && (
           <div className=" font-bold text-lg">
@@ -81,9 +84,9 @@ const Navbar = () => {
             <BellIcon className={`w-6 ${router.pathname === '/' ? 'text-gray-200' : 'text-black'} hover:text-gray-300 cursor-pointer transition`} />
 
           </div>
-          <div onClick={toggleAccountMenu} className="flex flex-row items-center gap-2 cursor-pointer relative">
+            <div onClick={toggleAccountMenu} className="flex flex-row items-center gap-2 cursor-pointer relative">
               <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
-                <img src={currentUser?.profileImage}alt="" />
+                <img src={currentUser?.profileImage} alt="" className="object-contain w-full h-full" />
               </div>
             {/* <ChevronDownIcon className={`w-4 text-white fill-white transition ${showAccountMenu ? 'rotate-180' : 'rotate-0'}`} /> */}
             <ChevronDownIcon className={`w-4 ${router.pathname === '/' ? 'text-white' : 'text-black'} fill-current transition ${showAccountMenu ? 'rotate-180' : 'rotate-0'}`} />

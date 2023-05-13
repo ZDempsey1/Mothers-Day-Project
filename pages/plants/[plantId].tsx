@@ -78,9 +78,9 @@ const FlowerDetails: React.FC<FlowerDetailsProps> = ({ flower }) => {
           <p className="mt-4 text-xl">
           <span className="font-bold">Temperature and Humidity-</span> {flower.temp}
         </p>
-
-        {/* <p className="mt-2 text-xl">
-          <span className="font-bold">{flower.name} Care- </span>{flower.care}</p> */}
+        <p className="mt-4 text-xl">
+          <span className="font-bold">Fertilizer-</span> {flower.fertilizer}
+          </p>
           </div>
         </div>
         <div className="flex-1">
@@ -110,9 +110,10 @@ const FlowerDetails: React.FC<FlowerDetailsProps> = ({ flower }) => {
             />
           </div>
           <p className="mt-10 text-xl mr-10">
-          <span className="font-bold">{flower.name}</span><span> Care- </span>{flower.care}</p>
+          <span className="font-bold">{flower.name}</span><span className='italic'> Care- </span>{flower.care}</p>
+          <p className="mt-10 text-xl mr-10">
+          <span className="font-bold">{flower.name}</span><span className='italic'> Problems- </span>{flower.problems}</p>
           <p className="mt-4 text-xl">
-          <span className="font-bold">Fertilizer-</span> {flower.fertilizer}
         </p>
         </div>
       </div>

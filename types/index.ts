@@ -1,13 +1,3 @@
-// export interface MovieInterface {
-//   id: string;
-//   title: string;
-//   description: string;
-//   thumbnailUrl: string;
-//   videoUrl: string;
-//   duration: string;
-//   genre: string;
-// }
-
 export interface FlowerInterface {
   id:string;
   name: String;
@@ -32,5 +22,6 @@ export interface FlowerInterface {
   pic2: String;
   pic3: String;
   picThumbnail: String;
-  fertilizer: String
+  fertilizer: String;
+  problems: String
 }

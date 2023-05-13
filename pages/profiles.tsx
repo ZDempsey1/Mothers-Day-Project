@@ -11,9 +11,9 @@ const images = [
   '/images/flower-pot.png',
   '/images/planting icon.png',
   '/images/cactus.png',
+  '/images/sunflower icon.png',
   '/images/watering-plants.png',
   '/images/potting.png',
-  '/images/sunflower icon.png'
 
 ]
 
@@ -40,21 +40,29 @@ export async function getServerSideProps(context: NextPageContext) {
   }
 }
 
+
 const UserCard: React.FC<UserCardProps> = ({ name, imgSrc, selectedImage }) => {
   return (
-    <div className="group flex-row w-44 mx-auto">
+    <div className="group flex flex-col items-center w-44 mx-auto">
       <div className="w-44 h-44 rounded-md flex items-center justify-center border-2 border-transparent group-hover:cursor-pointer group-hover:border-white overflow-hidden">
-        <img draggable={false} className="w-max h-max object-contain" src={selectedImage || imgSrc} alt="" />
+        <img
+          draggable={false}
+          className="object-cover max-w-full max-h-full"
+          src={selectedImage || imgSrc}
+          alt=""
+        />
       </div>
       <div className="mt-4 text-gray-400 text-2xl text-center group-hover:text-white">{name}</div>
+      <div className="flex">
+      </div>
     </div>
   );
-}
+};
 
 const App = () => {
   const router = useRouter();
   const { data: currentUser } = useCurrentUser();
-  const [selectedImage, setSelectedImage] = useState(images[0]);
+  const [selectedImage, setSelectedImage] = useState(currentUser?.profileImage || images[0]);
 
   const selectProfile = useCallback(() => {
     router.push('/');
@@ -64,7 +72,7 @@ const App = () => {
   const handleImageSelect = async (image: string) => {
     setSelectedImage(image);
 
-    // Call the API route to update the profile image in the database
+
     if (currentUser?.id) {
       try {
         const response = await fetch('/api/updateProfileImage', {
@@ -103,7 +111,7 @@ const App = () => {
     <div className="flex items-center h-full justify-center">
       <div className="flex flex-col">
         <h1 className="text-3xl md:text-6xl text-black text-center">Who&#39;s Planting?</h1>
-        <div className="flex items-center justify-center gap-8 mt-10">
+        <div className="object-contain w-full h-full gap-8 mt-10">
         <div onClick={() => selectProfile()}>
           <UserCard
               name={currentUser?.name}
