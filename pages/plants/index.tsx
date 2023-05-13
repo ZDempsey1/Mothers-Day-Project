@@ -38,7 +38,7 @@ const PlantsIndex = () => {
   placeholder="Search for plants by common/botanical name, plant type, or plant family."
   value={searchTerm}
   onChange={handleSearchChange}
-  className="your-input-class"
+  className="your-input-class mb-10 mt-3"
   style={{ height: '40px', width: "660px", padding: '8px' }}
 />
           )}
