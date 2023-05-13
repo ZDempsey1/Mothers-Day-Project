@@ -17,7 +17,7 @@ import useSWR from 'swr';
 import fetcher from '@/libs/fetcher';
 
 const useCurrentUser = () => {
-  const { data, error } = useSWR('/api/current', fetcher);
+  const { data, error, mutate } = useSWR('/api/current', fetcher);
 
   const isLoading = !data && !error;
   const status = isLoading ? 'loading' : error ? 'error' : 'success';
@@ -27,6 +27,7 @@ const useCurrentUser = () => {
     error,
     isLoading,
     status,
+    mutate,
   };
 };
 
