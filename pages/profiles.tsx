@@ -121,7 +121,7 @@ const App = () => {
           </div>
         </div>
         <h1 className="text-center text-2xl mt-10">Select an icon below and click the image to proceed </h1>
-        <h1 className="text-center text-2xl mt-5">You can update your icon later if you can't decide from all the awesomeness!</h1>
+        <h1 className="text-center text-2xl mt-5">You can update your icon later if you can&#39;t decide from all the awesomeness!</h1>
         <div className="mt-8">{renderImageOptions()}</div>
       </div>
     </div>
