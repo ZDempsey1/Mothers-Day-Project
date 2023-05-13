@@ -52,7 +52,7 @@ const UserCard: React.FC<UserCardProps> = ({ name, imgSrc, selectedImage }) => {
           alt=""
         />
       </div>
-      <div className="mt-4 text-gray-400 text-2xl text-center group-hover:text-white">{name}</div>
+      <div className="mt-4 text-black text-2xl text-center group-hover:text-gray-400">{name}</div>
       <div className="flex">
       </div>
     </div>
@@ -120,7 +120,7 @@ const App = () => {
             />
           </div>
         </div>
-        <h1 className="text-center text-2xl mt-10">Select an icon below and click your name to proceed</h1>
+        <h1 className="text-center text-2xl mt-10">Select an icon below and click the image to proceed </h1>
         <h1 className="text-center text-2xl mt-5">You can update your icon later if you can't decide from all the awesomeness!</h1>
         <div className="mt-8">{renderImageOptions()}</div>
       </div>
