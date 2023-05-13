@@ -3,6 +3,8 @@ import Navbar from '@/components/Navbar';
 import { FlowerInterface } from '@/types';
 import { useRouter } from 'next/router';
 import { GetStaticProps, GetStaticPaths } from 'next';
+import FavoriteButtonDetails from '@/components/FavoriteButtonDetails';
+
 
 interface FlowerDetailsProps {
   flower: FlowerInterface;
@@ -16,9 +18,14 @@ const FlowerDetails: React.FC<FlowerDetailsProps> = ({ flower }) => {
   // }
 
   const [selectedImage, setSelectedImage] = useState(flower.pic1);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const handleImageClick = (image: string) => {
     setSelectedImage(image);
+  };
+
+  const handleFavoriteClick = () => {
+    setIsFavorite(!isFavorite);
   };
 
   // Display flower details using the flower prop
@@ -105,9 +112,11 @@ const FlowerDetails: React.FC<FlowerDetailsProps> = ({ flower }) => {
             <img
               src={flower.pic3.toString()}
               alt=""
-              className="w-24 h-24 object-cover rounded-md cursor-pointer"
+              className="w-24 h-24 object-cover rounded-md cursor-pointer mr-12 my-custom-margin"
               onClick={() => handleImageClick(flower.pic3.toString())}
             />
+
+            <FavoriteButtonDetails flowerId={flower.id} />
           </div>
           <p className="mt-10 text-xl mr-10">
           <span className="font-bold">{flower.name}</span><span className='italic'> Care- </span>{flower.care}</p>
