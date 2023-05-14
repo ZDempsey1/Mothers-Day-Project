@@ -33,8 +33,8 @@ const FlowerDetails: React.FC<FlowerDetailsProps> = ({ flower }) => {
 
 return (
   <>
-            <div className="flex flex-col">
               <Navbar />
+            <div className="flex flex-col">
               {/* Desktop version */}
               <div className="lg:flex hidden p-4 rounded-md mt-20">
               <div className="flex-1 mt-2">
@@ -142,7 +142,8 @@ return (
       </div>
 
             {/* Mobile version */}
-<div className="lg:hidden block p-4 rounded-md mt-20">
+  {/* <div className="lg:hidden block p-4 rounded-md mt-20"> */}
+  <div className="lg:hidden block pt-16 p-4 rounded-md mt-10">
   <div className="mt-2">
     <h2 className="text-2xl font-bold">{flower.name}</h2>
     <img
@@ -170,6 +171,9 @@ return (
         onClick={() => handleImageClick(flower.pic3.toString())}
       />
     </div>
+    <div className="mt-4">
+              <FavoriteButtonDetails flowerId={flower.id} />
+            </div>
             <p className="mt-4 text-xl">
               <span className="font-bold">Plant Family -</span> {flower.family}
             </p>
@@ -231,9 +235,7 @@ return (
               <span className="italic"> Problems - </span>
               {flower.problems}
             </p>
-            <div className="mt-4">
-              <FavoriteButtonDetails flowerId={flower.id} />
-            </div>
+
           </div>
         </div>
       </>
