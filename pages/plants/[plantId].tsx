@@ -143,7 +143,7 @@ return (
 
             {/* Mobile version */}
   {/* <div className="lg:hidden block p-4 rounded-md mt-20"> */}
-  <div className="lg:hidden block pt-16 p-4 rounded-md mt-10">
+  <div className="lg:hidden block pt-16 p-4 rounded-md">
   <div className="mt-2">
     <h2 className="text-2xl font-bold">{flower.name}</h2>
     <img
