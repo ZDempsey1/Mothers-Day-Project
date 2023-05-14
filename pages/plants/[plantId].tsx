@@ -32,7 +32,7 @@ const FlowerDetails: React.FC<FlowerDetailsProps> = ({ flower }) => {
   return (
     <div className="flex flex-col">
       <Navbar />
-      <div className="p-4 shadow-md rounded-md mt-20 flex">
+      <div className="p-4 rounded-md mt-20 flex">
         <div className="flex-1 mt-2">
           <div className='mr-12 ml-12' style={{ marginRight: '58px' }}>
 
@@ -90,7 +90,94 @@ const FlowerDetails: React.FC<FlowerDetailsProps> = ({ flower }) => {
           </p>
           </div>
         </div>
+    {/* <div className="flex-1">
+      <img
+        src={selectedImage.toString()}
+        alt="Selected"
+        className="w-3/4 object-cover rounded-md mt-4"
+      /> */}
+
+      {/* <div className="flex-1">
+  <img
+    src={selectedImage.toString()}
+    alt="Selected"
+    className="w-full md:w-3/4 h-24 md:h-auto object-cover rounded-md mt-4"
+  />
+      <div className="flex mt-4 md:flex-row md:items-center">
+        <div className="flex flex-wrap justify-center md:justify-start md:mr-12">
+          <img
+            src={flower.pic1.toString()}
+            alt=""
+            className="w-full md:w-auto h-24 object-cover rounded-md mb-4 md:mr-4 cursor-pointer"
+            onClick={() => handleImageClick(flower.pic1.toString())}
+          />
+          <img
+            src={flower.pic2.toString()}
+            alt=""
+            className="w-full md:w-auto h-24 object-cover rounded-md mb-4 md:mr-4 cursor-pointer"
+            onClick={() => handleImageClick(flower.pic2.toString())}
+          />
+          <img
+            src={flower.pic3.toString()}
+            alt=""
+            className="w-full md:w-auto h-24 object-cover rounded-md cursor-pointer md:mr-12"
+            onClick={() => handleImageClick(flower.pic3.toString())}
+          />
+        </div>
+        <div className="hidden mt-4 md:block">
+          <FavoriteButtonDetails flowerId={flower.id} />
+        </div> */}
         <div className="flex-1">
+  <img
+    src={selectedImage.toString()}
+    alt="Selected"
+    className="w-full md:w-3/4 h-24 md:h-auto object-cover rounded-md mt-4"
+  />
+  <div className="flex flex-wrap mt-4 md:flex-nowrap md:items-center">
+    <div className="flex flex-wrap justify-center md:justify-start md:space-x-4">
+      <img
+        src={flower.pic1.toString()}
+        alt=""
+        className="w-full md:w-24 h-24 object-cover rounded-md mb-4 md:mb-0 cursor-pointer"
+        onClick={() => handleImageClick(flower.pic1.toString())}
+      />
+      <img
+        src={flower.pic2.toString()}
+        alt=""
+        className="w-full md:w-24 h-24 object-cover rounded-md mb-4 md:mb-0 cursor-pointer"
+        onClick={() => handleImageClick(flower.pic2.toString())}
+      />
+      <img
+        src={flower.pic3.toString()}
+        alt=""
+        className="w-full md:w-24 h-24 object-cover rounded-md mb-4 md:mb-0 cursor-pointer"
+        onClick={() => handleImageClick(flower.pic3.toString())}
+      />
+    </div>
+    <div className="mt-4 md:mt-0 md:ml-4">
+      <FavoriteButtonDetails flowerId={flower.id} />
+    </div>
+  </div>
+  {/* <div className="md:hidden mt-4">
+    <FavoriteButtonDetails flowerId={flower.id} />
+  </div> */}
+      <p className="mt-10 text-xl mr-10">
+        <span className="font-bold">{flower.name}</span>
+        <span className="italic"> Care- </span>
+        {flower.care}
+      </p>
+      <p className="mt-10 text-xl mr-10">
+        <span className="font-bold">{flower.name}</span>
+        <span className="italic"> Problems- </span>
+        {flower.problems}
+      </p>
+      <p className="mt-4 text-xl"></p>
+    </div>
+      </div>
+    </div>
+  );
+}
+/* <div className="flex-1">
           <img
             src={selectedImage.toString()}
             alt="Selected"
@@ -124,12 +211,7 @@ const FlowerDetails: React.FC<FlowerDetailsProps> = ({ flower }) => {
           <span className="font-bold">{flower.name}</span><span className='italic'> Problems- </span>{flower.problems}</p>
           <p className="mt-4 text-xl">
         </p>
-        </div>
-      </div>
-    </div>
-  );
-
-}
+        </div> */
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const flowerId = context.params?.plantId;

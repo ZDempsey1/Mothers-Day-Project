@@ -82,7 +82,7 @@ const FlowerCard: React.FC<FlowerCardProps> = ({ data }) => {
               <FavoriteButton flowerId={data.id} />
             </div>
             <Link href={`/plants/${data.id}`}>
-              <div className="flex items-center cursor-pointer text-white"> 
+              <div className="flex items-center cursor-pointer text-white">
                 <InformationCircleIcon className="w-4 md:w-7 mr-1" />
                 More Details
 
