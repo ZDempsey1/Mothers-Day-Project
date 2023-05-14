@@ -70,12 +70,18 @@ const Auth = () => {
   return (
     <div className="relative h-full w-full bg-[url(https://a-z-animals.com/media/2022/04/Two-cats-on-a-table-with-houseplants.jpg)] bg-no-repeat bg-center bg-fixed bg-cover">
       <div className="w-full h-full lg:bg-opacity-40">
-        <nav className="flex justify-left ml-auto mr-auto w-6/12">
+        {/* <nav className="flex justify-left ml-auto mr-auto w-6/12">
+          <img src="/images/planting.png" className="h-24" alt="Logo" />
+        </nav> */}
+        <nav className="flex justify-center w-full sm:w-6/12 sm:mx-auto">
           <img src="/images/planting.png" className="h-24" alt="Logo" />
         </nav>
+
         <div className="flex justify-left ml-auto mr-auto w-8/12">
 
-          <div className="bg-black bg-opacity-70 px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
+          {/* <div className="bg-black bg-opacity-70 px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full"> */}
+          <div className="bg-black bg-opacity-70 px-4 py-6 sm:px-8 sm:py-10 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
+
             <h2 className="text-white text-4xl mb-8 font-semibold text-center">
               {variant === 'login' ? 'Sign in' : 'Register'}
             </h2>
@@ -92,7 +98,7 @@ const Auth = () => {
               <Input
                 id="email"
                 type="email"
-                label="Email address or phone number"
+                label="Email address "
                 value={email}
                 onChange={(e: any) => setEmail(e.target.value)}
               />
@@ -117,9 +123,9 @@ const Auth = () => {
             </div>
             <p className="text-white text-xl text-center mt-12 flex flex-col">
                     <span>
-                        {variant === 'login' ?  'First time using the website?' : 'Already have an account?'}
+                        {variant === 'login' ?  'First time at plant-help?' : 'Already have an account?'}
                     </span>
-                    <span onClick={toggleVariant} className="text-green-500 ml-1 hover:underline cursor-pointer">
+                    <span onClick={toggleVariant} className="mt-4 text-green-500 ml-1 hover:underline cursor-pointer">
                         {variant === 'login' ? 'Create an account here!' : 'Login'}
                     </span>
                 </p>
