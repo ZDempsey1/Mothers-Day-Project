@@ -79,7 +79,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex flex-row ml-auto gap-7 items-center">
-            <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
+            {/* <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
               <MagnifyingGlassIcon
                 className={`w-6 ${showBackground ? 'text-white' : 'text-black'} hover:text-gray-300 cursor-pointer transition`}
               />
@@ -87,7 +87,7 @@ const Navbar = () => {
           <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
             <BellIcon className={`w-6 ${router.pathname === '/' ? 'text-gray-200' : 'text-black'} hover:text-gray-300 cursor-pointer transition`} />
 
-          </div>
+          </div> */}
             <div onClick={toggleAccountMenu} className="flex flex-row items-center gap-2 cursor-pointer relative">
               <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
                 <img src={currentUser?.profileImage} alt="" className="object-contain w-full h-full" />
