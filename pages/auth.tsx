@@ -73,9 +73,12 @@ const Auth = () => {
         {/* <nav className="flex justify-left ml-auto mr-auto w-6/12">
           <img src="/images/planting.png" className="h-24" alt="Logo" />
         </nav> */}
-        <nav className="flex justify-center w-full sm:w-6/12 sm:mx-auto">
-          <img src="/images/planting.png" className="h-24" alt="Logo" />
-        </nav>
+        <nav className="flex justify-center lg:justify-start w-full lg:w-6/12 lg:mx-auto">
+  <img src="/images/planting.png" className="h-24" alt="Logo" />
+</nav>
+
+
+
 
         <div className="flex justify-left ml-auto mr-auto w-8/12">
 
