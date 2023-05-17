@@ -153,8 +153,49 @@ const FlowerCard: React.FC<FlowerCardProps> = ({ data }) => {
 
   return (
     <>
-      {/* Mobile view */}
-      <div className="md:hidden group bg-zinc-900 col-span relative h-[12vw]">
+    <div className="md:hidden group bg-zinc-900 col-span relative h-[12vw]">
+  <img
+    src={data.pic1.toString()}
+    alt=""
+    draggable={false}
+    className="
+      cursor-pointer
+      object-cover
+      transition
+      duration
+      shadow-xl
+      rounded-md
+      group-hover:opacity-90
+      w-full
+      h-[12vw]
+    "
+    onClick={(e) => {
+      e.stopPropagation();
+      toggleMobileCardVisibility();
+    }}
+  />
+        {isMobileCardVisible && (
+  <div className="mobile-card fixed inset-x-0 top-1/4 bg-zinc-800 p-4 shadow-md rounded-md z-50 w-full max-w-md mx-auto">
+    <Carousel
+      showThumbs={false}
+      autoPlay={false}
+      infiniteLoop={true}
+      showStatus={false}
+      dynamicHeight
+      className="my-carousel"
+    >
+      <div>
+        <img src={data.pic2.toString()} />
+      </div>
+      <div>
+        <img src={data.pic3.toString()} />
+      </div>
+      <div>
+        <img src={data.pic1.toString()} />
+      </div>
+    </Carousel>
+      {/* Mobile view
+       <div className="md:hidden group bg-zinc-900 col-span relative h-[12vw]">
   <img
     src={data.pic1.toString()}
     alt=""
@@ -192,7 +233,7 @@ const FlowerCard: React.FC<FlowerCardProps> = ({ data }) => {
         h-[44vw]
       "
       onClick={(e) => e.stopPropagation()}
-    />
+    /> */}
     <div className="mt-4">
       <div className="flex flex-row items-center justify-between">
         <div className="flex items-center">
