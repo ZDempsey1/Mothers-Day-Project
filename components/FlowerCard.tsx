@@ -122,6 +122,9 @@ import { FlowerInterface } from '@/types';
 import FavoriteButton from '@/components/FavoriteButton';
 import useInfoModalStore from '@/hooks/useInfoModalStore';
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+
 
 interface FlowerCardProps {
   data: FlowerInterface;
@@ -233,36 +236,41 @@ const FlowerCard: React.FC<FlowerCardProps> = ({ data }) => {
   </div>
 
 
-        <div className={`
-          absolute
-          top-0
-          transition
-          duration-200
-          z-10
-          invisible
-          sm:visible
-          w-full
-          scale-0
-          group-hover:scale-110
-          group-hover:-translate-y-[6vw]
-          group-hover:translate-x-[2vw]
-          group-hover:opacity-100
-        `}>
-          <img
-            src={data.pic2.toString()}
-            alt=""
-            draggable={false}
-            className="
-              cursor-pointer
-              object-cover
-              transition
-              duration
-              shadow-xl
-              rounded-t-md
-              w-full
-              h-[12vw]
-            "
-          />
+  <div className={`
+  absolute
+  top-0
+  transition
+  duration-200
+  z-10
+  invisible
+  sm:visible
+  w-full
+  scale-0
+  group-hover:scale-110
+  group-hover:-translate-y-[6vw]
+  group-hover:translate-x-[2vw]
+  group-hover:opacity-100
+`}>
+  <Carousel
+    showThumbs={false}
+    autoPlay={false}
+    infiniteLoop={true}
+    showStatus={false}
+    dynamicHeight
+    className="my-carousel"
+  >
+    <div>
+      <img src={data.pic2.toString()} />
+    </div>
+    <div>
+      <img src={data.pic3.toString()} />
+    </div>
+    <div>
+      <img src={data.pic1.toString()} />
+    </div>
+  </Carousel>
+
+
           <div className="
             z-10
             bg-zinc-800

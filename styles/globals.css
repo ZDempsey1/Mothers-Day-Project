@@ -18,3 +18,9 @@ html {
 .my-custom-margin {
   margin-right: 7rem; /* Adjust the value as needed */
 }
+
+.my-carousel .carousel .slide img {
+  height: 12vw;
+  object-fit: cover; /* This will make the images scale to fit */
+  width: 100%;
+}
