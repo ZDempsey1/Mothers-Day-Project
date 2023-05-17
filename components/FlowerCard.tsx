@@ -182,16 +182,16 @@ const FlowerCard: React.FC<FlowerCardProps> = ({ data }) => {
       infiniteLoop={true}
       showStatus={false}
       dynamicHeight
-      className="my-carousel"
+      className="my-carousel-mobile"
     >
       <div>
-        <img src={data.pic2.toString()} />
+        <img src={data.pic2.toString()} onClick={(e) => e.stopPropagation()} />
       </div>
       <div>
-        <img src={data.pic3.toString()} />
+        <img src={data.pic3.toString()} onClick={(e) => e.stopPropagation()} />
       </div>
       <div>
-        <img src={data.pic1.toString()} />
+        <img src={data.pic1.toString()} onClick={(e) => e.stopPropagation()} />
       </div>
     </Carousel>
       {/* Mobile view
