@@ -185,13 +185,13 @@ const FlowerCard: React.FC<FlowerCardProps> = ({ data }) => {
       className="my-carousel-mobile"
     >
       <div>
-        <img src={data.pic2.toString()} onClick={(e) => e.stopPropagation()} />
+        <img src={data.pic2.toString()} onClick={(e) => e.stopPropagation()}  alt=""  />
       </div>
       <div>
-        <img src={data.pic3.toString()} onClick={(e) => e.stopPropagation()} />
+        <img src={data.pic3.toString()} onClick={(e) => e.stopPropagation()}  alt=""  />
       </div>
       <div>
-        <img src={data.pic1.toString()} onClick={(e) => e.stopPropagation()} />
+        <img src={data.pic1.toString()} onClick={(e) => e.stopPropagation()}  alt=""  />
       </div>
     </Carousel>
       {/* Mobile view
@@ -301,13 +301,13 @@ const FlowerCard: React.FC<FlowerCardProps> = ({ data }) => {
     className="my-carousel"
   >
     <div>
-      <img src={data.pic2.toString()} />
+      <img src={data.pic2.toString()} alt=""  />
     </div>
     <div>
-      <img src={data.pic3.toString()} />
+      <img src={data.pic3.toString()}  alt=""  />
     </div>
     <div>
-      <img src={data.pic1.toString()} />
+      <img src={data.pic1.toString()}  alt=""  />
     </div>
   </Carousel>
 

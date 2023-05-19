@@ -4,6 +4,7 @@ import { FlowerInterface } from '@/types';
 import { useRouter } from 'next/router';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import FavoriteButtonDetails from '@/components/FavoriteButtonDetails';
+import DisqusComments from '@/components/Disqus';
 
 
 interface FlowerDetailsProps {
@@ -28,6 +29,7 @@ const FlowerDetails: React.FC<FlowerDetailsProps> = ({ flower }) => {
     setIsFavorite(!isFavorite);
   };
 
+  const disqusUrl = `https://plant-help.com/flowers/${flower.id}`;
 
 
 
@@ -237,7 +239,16 @@ return (
             </p>
 
           </div>
+          <div>
+
+
         </div>
+        </div>
+        <DisqusComments
+        url={disqusUrl}
+        identifier={flower.id}
+        title={String(flower.name) }
+      />
       </>
     );
   }
